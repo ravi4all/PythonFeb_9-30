@@ -2,6 +2,7 @@
 # Searching Sorting
 
 from datetime import datetime
+import DataIO
 
 users = []
 userdata = {}
@@ -81,8 +82,14 @@ def registration():
 
     users.append(userdata.copy())
     print("Registered Successfully")
+
     for data in users:
         print(data)
+
+    saveData()
+
+def saveData():
+    DataIO.saveData(users)
 
 def errHandler():
     print("Wrong Choice...")
