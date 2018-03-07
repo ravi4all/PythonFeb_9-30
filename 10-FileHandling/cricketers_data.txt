@@ -1,0 +1,6 @@
+Sachin, 109
+Sehwag, 67
+Dhoni, 69
+Virat, 111,
+Bhuvi, 0
+Ishant, 0
