@@ -64,12 +64,19 @@ def login():
     emailID = input("Enter your EmailID : ")
     pwd = input("Enter your Password : ")
 
-    for user in users:
-        if user['MailId'] == emailID and user['Password'] == pwd:
+    # for user in users:
+    #     if user['MailId'] == emailID and user['Password'] == pwd:
+    #         print("Login Success")
+    #         login_success(user['Name'])
+    #     else:
+    #         print("Login Failed")
+
+    data = DataIO.readData()
+    for user in data:
+        # print(user)
+        if emailID in user and pwd in user:
             print("Login Success")
-            login_success(user['Name'])
-        else:
-            print("Login Failed")
+            login_success(user[0])
 
 def registration():
     username = input("Enter your Name : ")

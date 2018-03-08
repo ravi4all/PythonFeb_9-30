@@ -7,14 +7,33 @@ import csv
 # ]
 
 def saveData(data):
-    with open('data.csv', 'w', newline='') as file:
-        writer = csv.writer(file)
+    try:
+        with open('data.csv', 'w', newline='') as file:
+            writer = csv.writer(file)
 
-        # writer.writerow(data.values())
+            # writer.writerow(data.values())
 
-        for d in data:
-            writer.writerow(d.values())
-            # for d1 in d.values():
-            #     print(d1)
+            for d in data:
+                writer.writerow(d.values())
+                # for d1 in d.values():
+                #     print(d1)
+    except FileNotFoundError:
+        print("File not found")
 
 # saveData(Data)
+
+def readData():
+    data = []
+    try:
+        with open('data.csv') as file:
+            reader = csv.reader(file)
+            for rows in reader:
+                data.append(rows)
+    except FileNotFoundError:
+        print("File Not Found")
+
+    return data
+
+# d = readData()
+# for i in d:
+#     print(i)
